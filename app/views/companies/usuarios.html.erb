@@ -1,0 +1,10 @@
+<div style="width:80%;margin:0 auto;">
+<h1 style="text-align:center;">Clientes</h1>
+<br>
+<% @usuarios.each do |usuario| %>
+    <div class="field form-control"><%="Nombre : #{usuario.first_name} #{usuario.last_name}"%></div>
+    <div class="field form-control"><%="Email : #{usuario.email}"%></div>
+    <%company = Company.find(usuario.company_id)%>
+    <div class="field form-control"><%="Empresa : #{company.nombre}"%></div>
+    <br>
+<%end%>

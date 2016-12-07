@@ -1,0 +1,46 @@
+<div style="width:80%;margin:0 auto;text-align:center;">
+<%= form_for(@report) do |f| %>
+<%@report.errors.full_messages.each do |message|%>
+ <div class="be-purple white">
+     * <%=message%>
+ </div>
+<%end%>
+<div class="field">
+    <div class="form-control"><%=@report.user.first_name%> <%=@report.user.last_name%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%=@report.user.email%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%=@report.user.company.nombre%></div>
+</div>
+<div class="field">
+    <%= f.text_field :problem,:readonly => true, class:"form-control"%>
+</div>
+
+<div class="field">
+    <%= f.text_field :descripcion,:readonly => true, class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :point_of_t,:readonly => true, class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :prioridad,:readonly => true, class:"form-control"%>
+</div>
+<%if @report.may_asignar?%>
+<div class="field">
+    <%= f.label :Asignar_tecnico ,class: "form-control"%><br />
+    <%= f.select :tecnico,@tecnicos.map{ |r| [r.last_name, r.id] },class:"form-control" %>
+  </div>
+  <div style="text-align:center" class="field">
+    <%=f.submit "Asignar tecnico",class:"btn be-purple"%>
+</div>
+<%end%>
+<%if @report.may_resolver?%>
+  <div style="text-align:center" class="field">
+    <%=f.submit "Marcar como resuelto",class:"btn be-purple"%>
+</div>
+<%end%>
+
+<%end%>
+</div>

@@ -1,0 +1,18 @@
+<div style="width:80%;margin:0 auto;">
+<h1 style="text-align:center;">Empresas</h1>
+<br>
+<div class="be-purple btn"><%=link_to "Agregar empresa", new_company_path%></div>
+<br>
+<br>
+
+<% @companies.each do |company| %>
+
+<div class="field form-control"><%=link_to company.nombre, company%></div>
+<br>
+
+<%end%>
+
+
+</div>
+
+

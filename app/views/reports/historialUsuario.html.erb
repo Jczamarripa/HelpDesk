@@ -1,0 +1,11 @@
+<div style="width:80%;margin:0 auto;">
+<h1 style="text-align:center;">Historial de reportes creados</h1>
+<br>
+<% @reports.each do |report| %>
+<div class="field form-control"><%=link_to "Problema: #{report.problem}",report%></div>
+<div class="field form-control"><%="Punto de transmision: #{report.point_of_t}"%></div>
+<div class="field form-control"><%="Prioridad: #{report.prioridad}"%></div>
+<br>
+<br>
+<%end%>
+</div>

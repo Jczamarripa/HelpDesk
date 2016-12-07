@@ -1,0 +1,27 @@
+
+<%= form_for(@report) do |f| %>
+<%@report.errors.full_messages.each do |message|%>
+ <div class="be-purple white">
+     * <%=message%>
+ </div>
+<%end%>
+<div class="field">
+   <%=f.label :Seleccione_su_inconveniente_?,style: "text-align:center"%>
+    <%= f.select :problem,[['No se escucha', "No se escucha"],['Sí hay audio, no hay imagen','Sí hay audio, no hay imagen'],['No hay audio, sí hay imagen','No hay audio, sí hay imagen'],['No están los comunicados/spots que solicité','No están los comunicados/spots que solicité'],['No hay música (video o canción)','No hay música (video o canción)'],['Video o canción con lenguaje inapropiado','Video o canción con lenguaje inapropiado'],['No se ve una pantalla','No se ve una pantalla'],['Reubicación de equipo','Reubicación de equipo'],['Reubicación de pantalla','Reubicación de pantalla'],['Reubicación de bocina','Reubicación de bocina'],['Requerimiento de instalación','Requerimiento de instalación'],['Sin conexión','Sin conexión'],['Reporte a soporte','Reporte a soporte'],['Otro','Otro']] , class:"form-control"%>
+</div>
+<div class="field">
+   <%=f.label :Seleccione_el_punto_de_transmisión_del_inconveniente,style: "text-align:center"%>
+    <%= f.select :point_of_t,[['Servicios', "Servicios"],['Comedor interno','Comedor interno'],['Comedor externo','Comedor externo'],['Pasillo','Pasillo'],['Oficinas','Oficinas'],['Recepción','Recepción'],['Punto de venta','Punto de venta'],['Otro','Otro']], class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :descripcion,placeholder: "Descríbanos su inconveniente", class:"form-control"%>
+</div>
+<div class="field">
+   <%=f.label :Seleccione_la_prioridad_de_su_inconveniente,style: "text-align:center"%>
+    <%= f.select :prioridad,[['En el transcurso del día','En el transcurso del día'],['Inmediata','Inmediata']], class:"form-control"%>
+</div>
+
+<div style="text-align:center" class="field">
+    <%=f.submit "Enviar reporte",class:"btn be-purple"%>
+</div>
+<%end%>

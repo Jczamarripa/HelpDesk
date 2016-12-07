@@ -1,0 +1,89 @@
+html,body{
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url(fondo.png);
+    color: whitesmoke;
+     overflow-x: hidden;
+}
+
+.portada{
+    text-align: center;
+}
+
+
+.image-rae{
+    height: 25em;
+}
+
+.parrafo{
+    text-align: center;
+    font-size: 15px;
+    margin-left: 20em;
+}
+
+.top-space{
+    margin-top: 1em;
+}
+
+.no-top{
+    margin-top: -1em;
+}
+.btn{
+    text-align: center;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.field{
+    margin-top: 1em;
+}
+
+.form-control{
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    width: 100%;
+    display: block;
+    padding: 10px 0px;
+    font-size: 1.2em;
+        
+}
+
+.no-margin{
+    margin: 0px;
+}
+
+#logo{
+    font-size: 1.2em;
+}
+
+a,a:visited{
+    color: inherit;
+}
+
+a:link   
+{   
+ text-decoration:none;   
+} 
+
+.be-purple{
+    background-color: purple;
+}
+
+.white{
+    color: white;
+}
+
+.large-padding{
+    padding: 10px 7px;
+}
+
+.no-list{
+    list-style: none;
+}
+

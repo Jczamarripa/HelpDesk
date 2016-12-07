@@ -1,0 +1,30 @@
+<%= form_for(@company) do |f| %>
+<%@company.errors.full_messages.each do |message|%>
+ <div class="be-purple white">
+     * <%=message%>
+ </div>
+<%end%>
+<div class="field">
+   <div class="form-control"><%="Nombre :  #{@company.nombre}"%></div>
+<div class="field">
+    <div class="form-control"><%="RFC :  #{@company.rfc}"%></div>
+</div>
+<div class="field">
+     <div class="form-control"><%="Razon social :  #{@company.razon_social}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Telefono :  #{@company.telefono}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Email :  #{@company.email}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Contacto :  #{@company.contacto}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Nomenclatura :  #{@company.nomenclatura}"%></div>
+</div>
+<div style="text-align:center" class="field">
+    <button class="btn be-purple white" ><%=link_to "Editar empresa", edit_company_path(@company)%></button>
+</div>
+<%end%>

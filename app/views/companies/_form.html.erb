@@ -1,0 +1,31 @@
+<%= form_for(@company) do |f| %>
+<%@company.errors.full_messages.each do |message|%>
+ <div class="be-purple white">
+     * <%=message%>
+ </div>
+<%end%>
+<div class="field">
+    <%= f.text_field :nombre,placeholder: "Nombre de la empresa", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :rfc,placeholder: "RFC de la empresa", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :razon_social,placeholder: "Razon social de la empresa", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :telefono,placeholder: "Telefono de la empresa", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.email_field :email,placeholder: "Email de la empresa", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :contacto,placeholder: "Nombre del contcto en la empresa", class:"form-control"%>
+</div>
+<div class="field">
+    <%= f.text_field :nomenclatura,placeholder: "Nomenclatura de la empresa", class:"form-control"%>
+</div>
+<div style="text-align:center" class="field">
+    <%=f.submit "Registrar",class:"btn be-purple white"%>
+</div>
+<%end%>

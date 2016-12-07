@@ -1,0 +1,42 @@
+<div style="width:80%;margin:0 auto;text-align:center;">
+<h2>Registrar nuevo usuario</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+  
+  <div class="field">
+    <%= f.text_field :last_name,placeholder: "Apellidos", class:"form-control",autofocus: true%>
+</div>
+  
+  <div class="field">
+    <%= f.text_field :first_name,placeholder: "Nombre", class:"form-control"%>
+</div>
+  
+  <div class="field">
+    <%= f.email_field :email,placeholder: "Correo electronico", class:"form-control"%>
+</div>
+  
+  <div class="field">
+    <%= f.password_field :password,placeholder: "Contraseña", class:"form-control",autocomplete: "off"%>
+</div>
+    
+<div class="field">
+    <%= f.password_field :password_confirmation,placeholder: "Confirmar contraseña", class:"form-control",autocomplete: "off"%>
+</div>
+  
+  <div class="field">
+    <%= f.label :Compañia, class:"form-control" %>
+    <%= f.select :company,@companies.map{ |r| [r.nombre, r.id] },class:"form-control"%>
+  </div>
+  <div class="field">
+   <%= f.label :Tipo, class:"form-control" %>
+    <%= f.select :permission_level,[['Cliente', 1], ['Tecnico', 2]],class:"form-control"%>
+</div>
+<br>
+  <div class="actions">
+    <%= f.submit "Registrar usuario",class:"btn be-purple white" %>
+  </div>
+<% end %>
+<br>
+<%= render "devise/shared/links" %>
+</div>

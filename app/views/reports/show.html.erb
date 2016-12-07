@@ -1,0 +1,31 @@
+<%= form_for(@report) do |f| %>
+<%@report.errors.full_messages.each do |message|%>
+ <div class="be-purple white">
+     * <%=message%>
+ </div>
+<%end%>
+<div class="field">
+    <div class="form-control"><%="Usuario :  #{@report.user.first_name} #{@report.user.last_name}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Email del usuario :  #{@report.user.email}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Compañia del usuario :  #{@report.user.company.nombre}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Inconveniente que se reporto :  #{@report.problem}"%></div>
+</div>
+
+<div class="field">
+    <div class="form-control"><%="Descripcion del inconveniente :  #{@report.descripcion}"%></div>
+</div>
+<div class="field">
+    <div class="form-control"><%="Punto de transmision :  #{@report.point_of_t}"%></div>
+</div>
+<%if @tecnico != nil %>
+<div class="field">
+    <div class="form-control"><%="Tecnico que atendio :  #{@tecnico.first_name}  #{@tecnico.last_name}"%></div>
+</div>
+<%end%>
+<%end%>

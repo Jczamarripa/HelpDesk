@@ -1,0 +1,10 @@
+<div style="width:80%;margin:0 auto;">
+<h1 style="text-align:center;">Tecnicos</h1>
+<br>
+<% @tecnicos.each do |tecnico| %>
+    <div class="field form-control"><%="Nombre : #{tecnico.first_name} #{tecnico.last_name}"%></div>
+    <div class="field form-control"><%="Email : #{tecnico.email}"%></div>
+    <%company = Company.find(tecnico.company_id)%>
+    <div class="field form-control"><%="Empresa : #{company.nombre}"%></div>
+    <br>
+<%end%>

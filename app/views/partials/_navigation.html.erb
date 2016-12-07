@@ -1,0 +1,64 @@
+<nav class="be-purple white large-padding no-top">
+       <ul class="no-list row center-xs">
+         <li class="col-md"><h1 id="logo" class="no-margin">Sonnica Helpdesk</h1></li>
+          <%if user_signed_in?%>
+            <% if current_user.permission_level == 3 %>
+            <li class="col-md">
+              <%=link_to "Reportes recibidos",reports_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Reportes asignados",reports_asignados_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Historial de reportes atendidos",reports_historial_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Empresas",companies_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Clientes",companies_usuarios_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Tecnicos",companies_tecnicos_path%>
+              </li>
+            <%end%>
+            
+             <% if current_user.permission_level == 2 %>
+            <li class="col-md">
+              <%=link_to "Reportes asignados",reports_asignadosTecnico_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Historial de reportes atendidos",reports_historialTecnico_path%>
+              </li>
+            <%end%>
+            
+            
+            <% if current_user.permission_level == 1 %>
+            <li class="col-md">
+              <%=link_to "Reportes actuales",reports_creadosUsuario_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Reportes en proceso",reports_procesoUsuario_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Historial de reportes",reports_historialUsuario_path%>
+              </li>
+              <li class="col-md">
+              <%=link_to "Generar reporte",new_report_path%>
+              </li>
+            <%end%>
+            
+            
+            
+            
+             <li class="col-md">
+              <%=link_to "Terminar sesion",destroy_user_session_path,method: :delete%>
+              </li>
+              <%else%>
+               <li class="col-md">
+                <%=link_to "Iniciar Sesion",new_user_session_path%>
+           </li>
+            <%end%> 
+       </ul>
+        
+    </nav>
